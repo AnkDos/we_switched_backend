@@ -36,9 +36,10 @@ end
 
 
 
+def file_handle(name,insta_name,cat,tale)
 
 
-
+end
 
 
 
@@ -57,7 +58,13 @@ end
 
 post '/form' do
   name=params[:name].to_s
-  name
+  insta=params[:insta_name].to_s
+  category=params[:cat].to_s
+   tale=params[:Tale].to_s
+    "#{name} #{insta} #{category} #{tale}"
+
+
+
 end
 
 
