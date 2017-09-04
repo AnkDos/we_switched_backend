@@ -36,16 +36,6 @@ end
 
 
 
-def file_handle(name,insta_name,cat,tale)
-
-  myfile = File.new("wsws.txt", "w+")    # open file for read and write
-
-
-  myfile.puts(name)         # write a line
-  myfile.puts(insta_name)
-  myfile.puts(cat)         # write a line
-  myfile.puts(tale)
-end
 
 
 
@@ -63,13 +53,13 @@ $quote=recursive_find('quoteText',quote)
 end
 
 post '/form' do
-  name=params[:name].to_s
-  insta=params[:insta_name].to_s
-  category=params[:cat].to_s
-   tale=params[:Tale].to_s
-    #{}"#{name} #{insta} #{category} #{tale}"
-file_handle(name,insta,category,tale)
-
+#erb:index
+File.open('wsws.txt', 'a+') do |f|
+    f.puts params[:name].to_s
+    f.puts params[:insta_name].to_s
+    f.puts params[:cat].to_s
+    f.puts params[:Tale].to_s
+  end
 
 end
 
