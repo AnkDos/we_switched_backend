@@ -53,14 +53,20 @@ $quote=recursive_find('quoteText',quote)
 end
 
 post '/form' do
-#erb:index
+#
 File.open('wsws.txt', 'a+') do |f|
-    f.puts params[:name].to_s
-    f.puts params[:insta_name].to_s
-    f.puts params[:cat].to_s
-    f.puts params[:Tale].to_s
+    f.puts "Name:  #{params[:name].to_s}"
+    f.puts "Insta Name:  #{params[:insta_name].to_s}"
+    f.puts "Category: #{params[:cat].to_s}"
+    f.puts "Story:  #{params[:Tale].to_s}"
+    f.puts "date and time: #{Time.now}"
+    f.puts " "
   end
+erb:index
+end
 
+get '/aven' do
+send_file ('wsws.txt')
 end
 
 
