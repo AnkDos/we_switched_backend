@@ -32,7 +32,7 @@ def recursive_find( key, object )
   end
   nil
 end
-end
+
 
 
 
@@ -50,8 +50,9 @@ end
 
 
 get "/" do
-  erb:index
 $quote=recursive_find('quoteText',quote)
+  erb:index
+
 end
 
 
