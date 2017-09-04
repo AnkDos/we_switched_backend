@@ -1,5 +1,9 @@
  require "sinatra"
 
+ def quote
+
+ end
+
 get "/" do
   erb:index
 end
