@@ -34,7 +34,7 @@ def recursive_find( key, object )
 end
 end
 
-print"#{recursive_find('quoteText',d)}"
+
 
 
 
@@ -51,6 +51,7 @@ print"#{recursive_find('quoteText',d)}"
 
 get "/" do
   erb:index
+$quote=recursive_find('quoteText',quote)
 end
 
 
