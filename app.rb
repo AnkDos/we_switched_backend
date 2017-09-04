@@ -38,7 +38,13 @@ end
 
 def file_handle(name,insta_name,cat,tale)
 
+  myfile = File.new("wsws.txt", "w+")    # open file for read and write
 
+
+  myfile.puts(name)         # write a line
+  myfile.puts(insta_name)
+  myfile.puts(cat)         # write a line
+  myfile.puts(tale)
 end
 
 
@@ -61,8 +67,8 @@ post '/form' do
   insta=params[:insta_name].to_s
   category=params[:cat].to_s
    tale=params[:Tale].to_s
-    "#{name} #{insta} #{category} #{tale}"
-
+    #{}"#{name} #{insta} #{category} #{tale}"
+file_handle(name,insta,category,tale)
 
 
 end
