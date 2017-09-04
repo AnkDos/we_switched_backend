@@ -55,6 +55,10 @@ $quote=recursive_find('quoteText',quote)
 
 end
 
+post '/form' do
+  name=params[:name].to_s
+  name
+end
 
 
 #
