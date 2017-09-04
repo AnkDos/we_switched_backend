@@ -1,8 +1,31 @@
- require "sinatra"
+require "sinatra"
+require 'net/http'
+require 'json'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  def quote
-
- end
+   url="http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en"
+   uri = URI(url)
+   response = Net::HTTP.get(uri)
+   d=JSON.parse(response)
+end
 
 get "/" do
   erb:index
